@@ -7,38 +7,31 @@
 
 ## Framework & Output
 
-- **Framework:** [HTML/CSS/JS (vanilla) / React / Next.js / Astro / Vue / Svelte / No preference]
-- **Output format:** [Single HTML file / Multi-file component structure / Full project scaffold]
-- **CSS approach:** [Embedded `<style>` / CSS file / Tailwind / CSS Modules / Styled Components]
-- **JavaScript approach:** [Vanilla JS / TypeScript / JSX / No preference]
-- **Package manager:** [npm / yarn / pnpm / None (no build step)]
+- **Framework:** Next.js 14+ (App Router)
+- **Output format:** Full project scaffold — pages, components, and layout files
+- **CSS approach:** Tailwind CSS with custom config for brand tokens (colors, fonts, spacing)
+- **JavaScript approach:** TypeScript throughout
+- **Package manager:** pnpm
 
 ---
 
 ## Hosting & Deployment
 
-- **Hosting target:** [Vercel / Netlify / GitHub Pages / Cloudflare Pages / AWS / Other: specify]
-- **Custom domain:** [Yes — [yourdomain.com] / No / Not yet]
-- **CI/CD needed:** [Yes — deploy on push to main / No / Not yet]
-- **Environment:** [Static only / Serverless functions needed / Full backend needed]
-- **Build command (if known):** [e.g. `npm run build` / `next build` / None]
+- **Hosting target:** Vercel
+- **Custom domain:** Yes — nathanmiller.cc
+- **CI/CD needed:** Yes — deploy on push to main via Vercel GitHub integration
+- **Environment:** Static pages + serverless API routes (for form handling)
+- **Build command:** `pnpm build` / `next build`
 
 ---
 
 ## Integrations
 
-> *For each integration, specify what it does and any relevant account/config details.*
-
 | Integration | Purpose | Notes |
 |-------------|---------|-------|
-| [e.g. Stripe] | [Payments] | [Test mode / Live mode / Which products] |
-| [e.g. Mailchimp] | [Email list] | [Which audience ID] |
-| [e.g. Supabase] | [Database / Auth] | [Project URL needed] |
-| [e.g. Google Analytics] | [Analytics] | [Measurement ID: G-XXXXXXX] |
-| [e.g. Calendly] | [Booking] | [Embed or link] |
-| [e.g. Formspree] | [Form handling] | [Form ID: xxxxxxx] |
-
-*Add rows as needed. Remove rows that don't apply.*
+| HighLevel | CRM + form submission + email automation | Embed HighLevel forms or use HighLevel API to capture leads from "Work with me" and contact forms |
+| Google Analytics | Analytics | GA4 — Measurement ID to be added to `.env.local` |
+| Google Fonts | Typography | Instrument Serif + DM Sans — loaded via `next/font/google` |
 
 ---
 
@@ -46,78 +39,83 @@
 
 | Form | Fields | Where Data Goes | Notes |
 |------|--------|----------------|-------|
-| [e.g. Contact form] | [Name, Email, Message] | [Formspree / email] | [Any validation rules] |
-| [e.g. Newsletter] | [Email only] | [Mailchimp] | [Double opt-in?] |
-| [e.g. Waitlist] | [Name, Email] | [Supabase table] | [Confirmation email?] |
+| Work with me / Contact | First name, Last name, Email, Company, What you're working on | HighLevel CRM | Primary conversion form — on homepage and /contact |
+
+> Use HighLevel's embed script or their API endpoint. Do NOT use a native `<form>` tag — wire the submit button to the HighLevel handler via JavaScript.
 
 ---
 
 ## Authentication
 
-- **Auth needed:** [Yes / No]
-- **If yes — auth method:** [Email + password / Magic link / Google OAuth / GitHub OAuth / Multiple]
-- **Auth provider:** [Supabase / Firebase / Auth0 / NextAuth / Clerk / Custom]
-- **Protected pages/routes:** [List which pages require login]
-- **User roles:** [Single role / Admin + User / Custom: describe]
+- **Auth needed:** No — public-facing site only at launch
 
 ---
 
 ## CMS & Content Management
 
-- **CMS needed:** [Yes / No]
-- **Who updates content:** [Developer only / Non-technical editor / Both]
-- **CMS preference:** [Sanity / Contentful / Notion / Prismic / Strapi / Markdown files / None]
-- **Content types managed via CMS:** [Blog posts / Team members / Products / Testimonials / All / None]
-- **Localization / multi-language:** [Yes — languages: [list] / No]
+- **CMS needed:** Yes — for blog/writing section
+- **Who updates content:** Nathan (developer-comfortable, can edit markdown)
+- **CMS preference:** MDX files in the repository — no external CMS at launch. Blog posts live in `/content/posts/` as `.mdx` files.
+- **Content types managed:** Blog posts only at launch
+- **Localization / multi-language:** No
 
 ---
 
 ## Performance & SEO
 
-- **SEO priority:** [Critical (content/blog site) / Important (marketing site) / Low (internal tool)]
-- **Core Web Vitals target:** [LCP < 2.5s / FID < 100ms / CLS < 0.1 — or "best effort"]
-- **Lighthouse score goal:** [90+ / 80+ / Not a priority]
-- **Image optimization:** [Yes — use next/image or similar / Manual / Not needed]
-- **Sitemap needed:** [Yes / No]
-- **Robots.txt needed:** [Yes / No]
-- **Structured data / schema markup:** [Yes — type: [Article/Product/FAQ/etc] / No]
+- **SEO priority:** Critical — personal brand and thought leadership site lives or dies on search presence
+- **Core Web Vitals target:** LCP < 2.5s / CLS < 0.1 / INP < 200ms
+- **Lighthouse score goal:** 90+ on all pages
+- **Image optimization:** Yes — use `next/image` for all images. Portrait photography must be optimized and served in WebP.
+- **Sitemap needed:** Yes — auto-generated via `next-sitemap` or Next.js built-in
+- **Robots.txt needed:** Yes
+- **Structured data / schema markup:** Yes — Person schema on home/about, Article schema on blog posts
 
 ---
 
 ## Browser & Device Support
 
-- **Minimum browser support:** [Last 2 versions / IE11 / Modern only (Chrome/Firefox/Safari/Edge)]
+- **Minimum browser support:** Last 2 major versions of Chrome, Firefox, Safari, Edge
 - **Mobile breakpoints:**
-  - Mobile: [< 768px]
-  - Tablet: [768px – 1024px]
-  - Desktop: [> 1024px]
-  - Wide: [> 1440px — optional]
-- **Accessibility target:** [WCAG AA / WCAG AAA / Best effort / Not specified]
-- **Dark mode support:** [System preference / Manual toggle / Light only / Dark only]
+  - Mobile: < 768px
+  - Tablet: 768px – 1024px
+  - Desktop: > 1024px
+  - Wide: > 1440px
+- **Accessibility target:** WCAG AA — proper heading hierarchy, alt text on all images, keyboard-navigable
+- **Dark mode support:** Light only — no dark mode at launch
+
+---
+
+## Parallax & Animation Implementation Notes
+
+> These are technical requirements that apply to every build session.
+
+- Use CSS `transform: translateY()` driven by scroll position for parallax — do NOT use heavy JS scroll libraries
+- Framer Motion is acceptable for scroll-triggered reveal animations (fade + slide-up)
+- Overlapping section layers: use negative `margin-top` and `z-index` stacking, not absolute positioning hacks
+- Image hover blur: `filter: blur(0)` on hover transitioning from `filter: blur(2px)` with `transition: filter 300ms ease`
+- All animations must respect `prefers-reduced-motion` — wrap in a media query check
 
 ---
 
 ## Environment Variables Needed
 
-> *List variable names only — never put actual values in this file.*
+> List variable names only — never put actual values in this file.
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-STRIPE_PUBLIC_KEY=
-MAILCHIMP_API_KEY=
-GOOGLE_ANALYTICS_ID=
+NEXT_PUBLIC_GA_MEASUREMENT_ID=
+NEXT_PUBLIC_HIGHLEVEL_FORM_ID=
+HIGHLEVEL_API_KEY=
+NEXT_PUBLIC_SITE_URL=
 ```
 
-*Keep actual values in `.env.local` (never commit to GitHub).*
+*Keep actual values in `.env.local` — never commit to GitHub.*
 
 ---
 
 ## Known Constraints
 
-> *Anything the AI must know that doesn't fit above.*
-
-- [e.g. "Must work without JavaScript for core content (progressive enhancement)"]
-- [e.g. "No external API calls on the client — proxy through serverless functions"]
-- [e.g. "Bundle size must stay under 200kb"]
-- [e.g. "No paid npm packages — open source only"]
+- No paid npm packages — open source only (exception: if a Framer Motion license is needed, confirm first)
+- Parallax and animation effects must degrade gracefully — core content must be accessible without JS
+- Blog must support MDX — allow inline React components in posts for interactive elements later
+- Do not implement a CMS admin panel — markdown files edited directly in the repo

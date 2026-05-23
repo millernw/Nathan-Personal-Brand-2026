@@ -7,161 +7,162 @@
 
 ## Site Map
 
-> *Every page the site needs. Mark priority: P1 = launch, P2 = soon after, P3 = later.*
-
 | Page | Route | Priority | Notes |
 |------|-------|----------|-------|
-| Home | `/` | P1 | Main landing page |
-| About | `/about` | P1 | [What this page must achieve] |
-| Pricing | `/pricing` | P1 | [What this page must achieve] |
-| Blog index | `/blog` | P2 | [What this page must achieve] |
-| Blog post | `/blog/[slug]` | P2 | [Template post page] |
-| Contact | `/contact` | P1 | [What this page must achieve] |
-| Privacy Policy | `/privacy` | P1 | Legal — can be simple |
-| Terms of Service | `/terms` | P1 | Legal — can be simple |
-
-*Add or remove rows. Keep P1 lean — ship fast, expand later.*
+| Home | `/` | P1 | Main landing — hero, services, about teaser, writing teaser, CTA |
+| About | `/about` | P1 | Full story, philosophy, credentials, photo-forward |
+| Work / Projects | `/work` | P1 | Case studies or featured client outcomes |
+| Blog index | `/blog` | P1 | Writing archive — card grid, filterable by topic |
+| Blog post | `/blog/[slug]` | P1 | Article template — MDX rendered with reading time, share |
+| Contact | `/contact` | P1 | Simple form page — wired to HighLevel |
+| Privacy Policy | `/privacy` | P2 | Legal — simple text page |
+| Terms of Service | `/terms` | P2 | Legal — simple text page |
 
 ---
 
 ## Navigation
 
 **Header nav:**
-- **Style:** [Top bar / Sticky top bar / Sidebar / None]
-- **Logo position:** [Left / Center]
-- **Nav links:** [List them — e.g. "Features, Pricing, Blog, About"]
-- **CTA in nav:** [Yes — "[Button text]" / No]
-- **Mobile nav:** [Hamburger menu / Bottom nav bar / Full-screen overlay / Hidden]
-- **Transparent on hero?** [Yes — becomes solid on scroll / No — always solid]
+- **Style:** Sticky top bar — transparent over hero, transitions to `#FFFFFF` with subtle border-bottom on scroll
+- **Logo position:** Left — "Nathan Miller" wordmark in Instrument Serif
+- **Nav links:** About, Work, Writing, Contact
+- **CTA in nav:** Yes — "Work with me" — accent blue button, right side
+- **Mobile nav:** Hamburger → full-screen overlay with large nav links (staggered fade-in animation)
+- **Transparent on hero?** Yes — transparent with white text over hero image, becomes solid on scroll
 
 **Footer nav:**
-- **Columns:** [Single row of links / 2-column / 3-column / 4-column]
-- **Column 1:** [e.g. "Product: Features, Pricing, Changelog, Roadmap"]
-- **Column 2:** [e.g. "Company: About, Blog, Press, Careers"]
-- **Column 3:** [e.g. "Legal: Privacy, Terms, Cookies"]
-- **Social icons:** [Yes — platforms: [list] / No]
-- **Newsletter in footer:** [Yes / No]
+- **Columns:** 3-column on desktop, stacked on mobile
+- **Column 1:** Nathan Miller — tagline + social icons (LinkedIn, Instagram, Facebook)
+- **Column 2:** Site: Home, About, Work, Writing, Contact
+- **Column 3:** Legal: Privacy, Terms
+- **Social icons:** Yes — LinkedIn, Instagram, Facebook
+- **Newsletter in footer:** No
 
 ---
 
 ## Homepage Section Order
 
-> *List every section in the exact order it should appear on the homepage.*
-> *For each: describe the layout (1 sentence) and the primary goal.*
+> Every section in exact scroll order. Each should feel visually distinct but flow together.
 
 1. **Hero**
-   - Layout: [e.g. "Full-width, centered text left, product mockup right, CTA below headline"]
-   - Goal: [e.g. "Hook attention and drive to the primary CTA"]
+   - Layout: Full-viewport height. Large editorial portrait of Nathan — occupies right ~60% of screen, slightly oversized and clipped. Headline and subhead left-aligned on the left. Primary CTA + secondary CTA stacked below headline. Parallax: portrait scrolls at 70% speed of text.
+   - Goal: Establish who Nathan is and drive to "Work with me" within 5 seconds
 
-2. **Social Proof Bar**
-   - Layout: [e.g. "Horizontal scrolling logos of trusted brands, full width, muted colors"]
-   - Goal: [e.g. "Establish credibility immediately below the fold"]
+2. **Authority Bar**
+   - Layout: Full-width strip below hero — subtle background (#F8FAFC). Text: "Trusted by founders and executives at:" followed by 4–6 logo placeholders or company names in muted gray.
+   - Goal: Establish credibility immediately below the fold
 
-3. **Features**
-   - Layout: [e.g. "3-column card grid on desktop, single column on mobile"]
-   - Goal: [e.g. "Communicate core value props with icons and short copy"]
+3. **What I Do (Services)**
+   - Layout: 4-card grid on desktop (2x2 on tablet, 1 column on mobile). Each card: icon, service name, 1-sentence description, subtle hover effect (slight lift + border color change). Not a traditional pricing card — these are service categories.
+   - Goal: Communicate the four ways to work with Nathan clearly
 
-4. **How It Works**
-   - Layout: [e.g. "3-step numbered list with alternating image/text rows"]
-   - Goal: [e.g. "Reduce confusion about what the product does"]
+4. **The Problem (Narrative Section)**
+   - Layout: Full-width, alternating background (#0F172A dark). Large editorial text only — no image. A short, punchy statement about why marketing fails for most founders. Possibly 2–3 sentences displayed large (think magazine pull quote). Accent blue used for emphasis word or phrase.
+   - Goal: Create recognition — the visitor should think "that's me"
 
-5. **Testimonials**
-   - Layout: [e.g. "Horizontal carousel of quote cards with avatar and name"]
-   - Goal: [e.g. "Build trust with real user voices"]
+5. **About Teaser**
+   - Layout: Asymmetric 2-column — large Nathan photo left (slight parallax), editorial text right. Photo slightly overlaps into the previous section on scroll. 2–3 sentences from the about copy + "Read my story" link.
+   - Goal: Make Nathan feel real and compelling — drive to /about
 
-6. **Pricing**
-   - Layout: [e.g. "3-column table, center column highlighted as 'most popular'"]
-   - Goal: [e.g. "Convert ready buyers without sending them to a separate page"]
+6. **Featured Writing**
+   - Layout: "From the blog" header + 3 latest post cards in a horizontal row (vertical stack on mobile). Each card: post title, date, 1-line description, "Read" arrow link. Subtle image or illustration optional.
+   - Goal: Show depth of thinking and drive blog traffic
 
-7. **FAQ**
-   - Layout: [e.g. "Accordion, 2-column on desktop, 1-column on mobile"]
-   - Goal: [e.g. "Handle objections and reduce support tickets"]
+7. **Testimonials**
+   - Layout: Full-width, alternating background (#F8FAFC). 3 testimonial cards displayed horizontally. Each: large quotation mark (accent blue), quote text, name, title/company. On mobile: single card with left/right swipe.
+   - Goal: Social proof from real clients
 
-8. **Final CTA**
-   - Layout: [e.g. "Full-width band, large headline, single button, no distractions"]
-   - Goal: [e.g. "One last conversion push before the footer"]
+8. **Final CTA (Work With Me)**
+   - Layout: Full-width section, dark background (#0F172A). Large centered headline: "Ready to get clear?" Subhead: "Clarity on your message. Systems that run it. Results that compound." Single large CTA button: "Work with me" in accent blue. No other elements — maximum focus.
+   - Goal: Final conversion push before footer
 
 9. **Footer**
-   - Layout: [see Footer nav above]
-   - Goal: [Navigation and legal]
+   - See footer nav spec above
+   - Goal: Navigation, social, legal
 
-*Reorder, add, or remove sections as needed.*
+---
+
+## About Page Structure
+
+1. **Hero** — Large full-width photo of Nathan. Name + tagline overlaid. Parallax scroll.
+2. **Story section** — 3–4 paragraphs. Personal, direct, credible. Why Nathan does this work.
+3. **Philosophy / values** — 3–4 belief statements (e.g. "I believe clarity is a competitive advantage") displayed as large pull quotes or a numbered list with editorial styling.
+4. **Credentials** — Understated. Brief list: years experience, industries worked in, notable outcomes. Not a résumé.
+5. **CTA** — "Work with me" link/button
+
+---
+
+## Work / Projects Page Structure
+
+1. **Page header** — "Work" heading + 1-sentence description
+2. **Case study cards** — Each card: client type (not necessarily name), the problem, the outcome (metric if available), services used. Hover: image blur-to-sharp reveal.
+3. **CTA** — "Want results like these? Work with me."
 
 ---
 
 ## Component Library
 
-> *List every UI component the site needs. The AI will build these one at a time.*
-
 **Navigation components:**
-- [ ] Top navigation bar (desktop)
-- [ ] Mobile hamburger menu
-- [ ] Footer
+- [ ] Top navigation bar (desktop) — transparent + solid scroll variant
+- [ ] Mobile hamburger menu + full-screen overlay
+- [ ] Footer — 3-column
+
+**Hero components:**
+- [ ] Homepage hero — parallax portrait + editorial headline
+- [ ] Page hero — full-width photo with text overlay (for About, Work, Blog)
 
 **Content components:**
-- [ ] Hero section
-- [ ] Feature card
-- [ ] Testimonial card
-- [ ] Pricing table / pricing card
-- [ ] FAQ accordion
-- [ ] CTA band / CTA section
-- [ ] Social proof logo bar
-- [ ] Stats/numbers bar
+- [ ] Service card (4-up grid)
+- [ ] Testimonial card (horizontal 3-up)
+- [ ] Blog post card (3-up grid)
+- [ ] Work/case study card with blur-reveal hover
+- [ ] About teaser block (asymmetric 2-col with overlapping photo)
+- [ ] Narrative/pull quote section (dark background, large text)
+- [ ] Authority/logo bar
 
 **Form components:**
-- [ ] Contact form
-- [ ] Newsletter signup (inline)
-- [ ] Newsletter signup (modal)
-- [ ] Waitlist form
+- [ ] Work with me / Contact form (wired to HighLevel)
 
 **UI primitives:**
-- [ ] Primary button
-- [ ] Secondary button (outlined)
-- [ ] Ghost button (text only)
-- [ ] Badge / tag
-- [ ] Avatar
-- [ ] Tooltip
-- [ ] Modal / dialog
-- [ ] Toast notification
+- [ ] Primary button (accent blue fill, slide-door hover)
+- [ ] Secondary button (outlined, transparent fill)
+- [ ] Ghost / text link with animated underline
+- [ ] Section heading + subheading component
 
 **Page-specific:**
-- [ ] Blog post card (for index)
-- [ ] Blog post layout (article template)
+- [ ] Blog post layout (MDX article template with reading time)
 - [ ] 404 page
 
 ---
 
 ## Responsive Behavior
 
-> *Specify how key sections adapt across breakpoints.*
-
 | Section | Mobile (< 768px) | Tablet (768–1024px) | Desktop (> 1024px) |
 |---------|------------------|---------------------|---------------------|
-| Hero | Stacked, full width | Text left, image right | Text left, image right, wider |
-| Features | 1 column | 2 columns | 3 columns |
-| Testimonials | Single card, swipe | 2 cards | 3 cards or carousel |
-| Pricing | Stacked cards | 2 columns | 3 columns, side by side |
-| Footer | Stacked, links collapsed | 2 columns | 4 columns |
-
-*Add rows for any section that needs specific responsive guidance.*
+| Hero | Stacked — photo below text, portrait cropped square | Text left, photo right at 50/50 | Text left 40%, photo right 60%, oversized and parallax |
+| Services | 1 column | 2x2 grid | 2x2 grid with more spacing |
+| About teaser | Stacked, photo first | Photo left 40%, text right 60% | Photo left 45%, text right, photo slightly bleeds into prev section |
+| Featured writing | 1 column, vertical | 2 columns | 3 columns horizontal |
+| Testimonials | 1 card, swipe gesture | 2 cards | 3 cards side by side |
+| Footer | Stacked, all 3 columns vertical | 2 columns | 3 columns |
 
 ---
 
 ## Interaction Patterns
 
-- **Scroll behavior:** [Smooth scroll / Instant / Snap scroll]
-- **Sticky elements:** [Nav only / Nav + side TOC / None]
-- **Modal triggers:** [Yes — which CTAs open modals? / No modals]
-- **Infinite scroll or pagination:** [Pagination / Load more button / Infinite scroll / Not applicable]
-- **Carousel/slider behavior:** [Auto-play / Manual only / Swipe on mobile]
-- **Accordion behavior:** [One open at a time / Multiple can be open]
-- **Back to top button:** [Yes / No]
+- **Scroll behavior:** Smooth scroll — `scroll-behavior: smooth` on html element
+- **Sticky elements:** Nav only — sticks to top after hero
+- **Modal triggers:** No modals at launch
+- **Parallax:** Hero portrait + About photo sections — scroll-driven via JS `requestAnimationFrame`
+- **Carousel/slider behavior:** Testimonials on mobile — swipe gesture, no auto-play
+- **Accordion behavior:** Not used at launch
+- **Back to top button:** No — site is scroll-forward by design
 
 ---
 
 ## Whitespace & Density
 
-- **Section vertical padding:** [Tight (40px) / Standard (80px) / Generous (120px+)]
-- **Card internal padding:** [Tight (16px) / Standard (24px) / Generous (32px+)]
-- **Line height (body):** [Tight (1.4) / Standard (1.6) / Open (1.8)]
-- **Overall feel:** [Dense and data-rich / Balanced / Open and airy]
+- **Section vertical padding:** Generous — 120px desktop, 80px tablet, 60px mobile
+- **Card internal padding:** Standard — 24px all sides, 32px on featured/hero cards
+- **Line height (body):** Open — 1.7 for body copy, 1.1–1.2 for large display headings
+- **Overall feel:** Open and airy — let the typography and photography do the work, don't fill space with decoration

@@ -6,48 +6,48 @@
 
 ## Project Identity
 
-- **Project name:** [PROJECT NAME]
-- **Tagline / one-liner:** [One sentence describing what this is — e.g. "A minimalist journaling app for daily reflection"]
-- **Project type:** [Landing page / SaaS app / Portfolio / E-commerce / Blog / Tool / Other]
-- **Primary goal:** [What must this website achieve? e.g. "Capture email signups for a waitlist"]
-- **Success metric:** [How will you know it worked? e.g. "500 signups in the first month"]
+- **Project name:** Nathan Miller — Personal Brand 2026
+- **Tagline / one-liner:** Clarity on your message. Systems that run it. Results that compound.
+- **Project type:** Personal brand site — thought leadership + consulting
+- **Primary goal:** Drive inbound "Work with me" inquiries from founders and executives
+- **Success metric:** Consistent qualified consulting inquiry submissions each month
 
 ---
 
 ## Audience
 
-- **Primary user:** [Name, age range, role — e.g. "Maya, 28–40, freelance designer"]
-- **Their core problem:** [One sentence — be specific]
-- **Device context:** [Mostly mobile / mostly desktop / both equally]
-- **Tech literacy:** [Beginner / intermediate / technical]
+- **Primary user:** Small business founders and executives, 35–55, who want better marketing results but feel overwhelmed by strategy and systems
+- **Their core problem:** Their product is good but their message isn't landing — and they have no reliable system to turn attention into revenue consistently
+- **Device context:** Both mobile and desktop equally
+- **Tech literacy:** Intermediate — business-savvy, not developer-focused
 
 ---
 
 ## Aesthetic Direction
 
-- **Vibe in 3–5 words:** [e.g. "brutalist, editorial, monochrome" or "soft, earthy, warm, wellness"]
-- **Primary color:** [hex code or description]
-- **Accent color:** [hex code or description]
-- **Background:** [hex code or description]
-- **Font direction:** [e.g. "bold slab serif headlines, clean sans-serif body" or "monospace throughout"]
-- **Best reference site:** [URL of the site that best captures the feel you want]
+- **Vibe in 3–5 words:** editorial, minimal, polished, confident, human
+- **Primary color:** #0F172A (deep near-black slate)
+- **Accent color:** #2563EB (clean, confident blue)
+- **Background:** #FFFFFF with #F8FAFC for surface areas
+- **Font direction:** Instrument Serif for headlines (editorial, premium), DM Sans for body (clean, readable — not generic)
+- **Best reference sites:** myrongolden.com, melrobbins.com, jennakutcher.com, tonyrobbins.com
 
 ---
 
 ## Tech Stack
 
-- **Framework:** [HTML/CSS/JS / React / Next.js / Astro / Vue / Svelte / No preference]
-- **Output format:** [Single HTML file / Component files / Full project scaffold]
-- **Hosting target:** [Vercel / Netlify / GitHub Pages / Other]
-- **Key integrations:** [Stripe / Mailchimp / Supabase / None / List them]
+- **Framework:** Next.js 14+ (App Router)
+- **Output format:** Full project scaffold
+- **Hosting target:** Vercel
+- **Key integrations:** HighLevel (forms + CRM), Google Analytics GA4
 
 ---
 
 ## Assets
 
-- **Logo:** [raw GitHub URL to /assets/logo.svg — or "not ready yet"]
-- **Hero image:** [raw GitHub URL or "not ready yet"]
-- **Brand colors file:** [raw GitHub URL or "see hex codes above"]
+- **Logo:** not ready yet — use "Nathan Miller" wordmark in heading font for now
+- **Hero image:** not ready yet — use placeholder with correct dimensions and aspect ratio
+- **Brand colors file:** see hex codes above
 
 ---
 
@@ -58,11 +58,13 @@
 - DO use the exact colors and fonts specified above
 - DO make it mobile-first and fully responsive
 - DO write real copy — no Lorem Ipsum, ever
+- DO use scroll-based parallax, overlapping layer effects on scroll, image blur hover transitions, and expressive hover states — this site should feel alive and crafted
+- DO build with Tailwind CSS and TypeScript throughout
 - DO NOT use purple gradients or generic AI color schemes
-- DO NOT use Inter, Roboto, or Arial — choose distinctive typography
+- DO NOT use Inter, Roboto, or Arial — use Instrument Serif for headings, DM Sans for body
 - DO NOT add sections, pages, or features not explicitly requested
-- DO NOT use `<form>` tags — use div-based click handlers
-- Output format: [restate your preferred output — e.g. "Single HTML file with embedded CSS and JS"]
+- DO NOT use `<form>` tags — wire CTAs to HighLevel embed or API endpoint
+- Output format: Next.js App Router component files with Tailwind CSS
 
 ---
 
